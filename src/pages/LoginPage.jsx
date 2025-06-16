@@ -30,63 +30,108 @@ const LoginPage = () => {
 
   return (
     <>
-      <h3 className="text-center mb-4" style={{ color: "#FF78AC" }}>
-        Welcome Back 👋
-      </h3>
+<h3
+  className="text-center mb-4"
+  style={{
+    color: "#e100ff",
+    fontFamily: "'Orbitron', sans-serif",
+    fontWeight: 700,
+    fontSize: "1.8rem",
+  }}
+>
+  Welcome Back 👋
+</h3>
 
-      <form onSubmit={handleLogin}>
-        <div className="mb-3">
-          <label className="form-label">Username</label>
-          <input
-            type="text"
-            className="form-control"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            placeholder="Enter your username"
-          />
-        </div>
+<form onSubmit={handleLogin}>
+  <div className="mb-3">
+    <label
+      className="form-label"
+      style={{
+        color: "#7c4dff",
+        fontWeight: "600",
+        fontFamily: "'Poppins', sans-serif",
+      }}
+    >
+      Username
+    </label>
+    <input
+      type="text"
+      className="form-control"
+      value={username}
+      onChange={(e) => setUsername(e.target.value)}
+      required
+      placeholder="Enter your username"
+      style={{
+        backgroundColor: "#f3e9ff",
+        border: "1px solid #7c4dff",
+        borderRadius: "12px",
+        padding: "12px",
+        fontFamily: "'Poppins', sans-serif",
+        fontWeight: 500,
+      }}
+    />
+  </div>
 
-        <div className="mb-3">
-          <label className="form-label">Password</label>
-          <div className="input-group">
-            <input
-              type={showPassword ? "text" : "password"}
-              className="form-control"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder="Enter your password"
-            />
-            <button
-              type="button"
-              className="btn btn-outline-secondary"
-              onClick={() => setShowPassword(!showPassword)}
-              tabIndex={-1}
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-            </button>
-          </div>
-        </div>
+  <div className="mb-3" style={{ position: "relative" }}>
+  <input
+    type={showPassword ? "text" : "password"}
+    className="form-control"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    required
+    placeholder="Enter your password"
+    style={{
+      backgroundColor: "#f3e9ff",
+      border: "1px solid #7c4dff",
+      borderRadius: "12px",
+      padding: "12px 45px 12px 12px", // right padding for icon
+      fontFamily: "'Poppins', sans-serif",
+      fontWeight: 500,
+      width: "100%",
+    }}
+  />
 
-        {error && (
-          <div
-            className="alert alert-danger text-center py-2 mb-3"
-            style={{ fontSize: "0.9rem" }}
-          >
-            {error}
-          </div>
-        )}
+  <button
+    type="button"
+    onClick={() => setShowPassword(!showPassword)}
+    tabIndex={-1}
+    style={{
+      position: "absolute",
+      top: "50%",
+      right: "12px",
+      transform: "translateY(-50%)",
+      background: "none",
+      border: "none",
+      color: "#7c4dff",
+      fontSize: "1.2rem",
+      cursor: "pointer",
+    }}
+  >
+    {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+  </button>
+</div>
 
-        <button
-          type="submit"
-          className="btn w-100"
-          style={{ backgroundColor: "#A8D5E3", color: "#000", fontWeight: "bold" }}
-        >
-          Log In
-        </button>
-      </form>
+
+  <button
+    type="submit"
+    className="w-100 mt-3"
+    style={{
+      background: "linear-gradient(135deg, #7f00ff, #e100ff)",
+      color: "#fff",
+      fontWeight: "600",
+      fontSize: "1.1rem",
+      border: "none",
+      borderRadius: "30px",
+      padding: "12px",
+      fontFamily: "'Poppins', sans-serif",
+      boxShadow: "0 0 12px rgba(129, 0, 255, 0.6)",
+      transition: "all 0.3s ease",
+    }}
+  >
+    Log In
+  </button>
+</form>
+
 
       <p className="text-center mt-3 mb-0" style={{ fontSize: "0.9rem" }}>
         Don't have an account?{" "}

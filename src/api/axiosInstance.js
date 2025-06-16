@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create Axios instance with auth token if available
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8080/api", // Your Spring Boot backend
+  baseURL: "https://jobtracker-backend-nx24.onrender.com/api", // Your Spring Boot backend
 });
 
 // Add JWT token to all requests if present
