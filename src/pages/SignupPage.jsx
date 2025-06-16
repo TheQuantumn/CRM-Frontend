@@ -14,7 +14,7 @@ const SignupPage = () => {
     setError("");
 
     try {
-      await axios.post("http://localhost:8080/api/auth/register", {
+      await axios.post("https://jobtracker-backend-nx24.onrender.com/api/auth/register", {
         username,
         password,
       });

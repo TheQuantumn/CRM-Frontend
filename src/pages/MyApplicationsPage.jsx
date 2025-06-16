@@ -7,7 +7,7 @@ const MyApplications = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/applications/my", {
+        const res = await axios.get("https://jobtracker-backend-nx24.onrender.com/api/applications/my", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -24,7 +24,7 @@ const MyApplications = () => {
   const handleStatusChange = async (applicationId, newStatus) => {
     try {
       await axios.patch(
-        `http://localhost:8080/api/applications/${applicationId}/status`,
+        `https://jobtracker-backend-nx24.onrender.com/api/applications/${applicationId}/status`,
         { status: newStatus },
         {
           headers: {

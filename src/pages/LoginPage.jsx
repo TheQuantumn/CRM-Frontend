@@ -16,7 +16,7 @@ const LoginPage = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:8080/api/auth/login", {
+      const res = await axios.post("https://jobtracker-backend-nx24.onrender.com/api/auth/login", {
         username,
         password,
       });
